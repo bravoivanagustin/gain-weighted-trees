@@ -8,7 +8,7 @@ Este documento es el plan maestro. Cubre las 4 fases con distinto nivel de detal
 
 | Fase | Objetivo | Spec | Condición para empezar | Estado |
 |---|---|---|---|---|
-| 1 | Árbol CART propio en numpy, verificado contra sklearn | `01-cart-tree.md` | — | M0 hecho localmente; M1–M5 pendientes |
+| 1 | Árbol CART propio en numpy, verificado contra sklearn | `01-cart-tree.md` | — | M0 hecho; M1–M5 pendientes |
 | 2 | `GainWeightedSelector(alpha)`, plano y en dos etapas | `02-gain-weighted-selector.md` (a escribir) | Fase 1 terminada; preguntas 1–5 de `docs/open-questions.md` resueltas | No empezada |
 | 3 | Bosque propio: bootstrap como pesos + `max_features` + selector | `03-forest.md` (a escribir) | Fase 2 terminada | No empezada |
 | 4 | Experimentos: sesgo, varianza y `ρ` en función de α, contra RF, ExtraTrees y Dietterich top-k | `04-experiments.md` (a escribir) | Fase 3 terminada y control "α → ∞ reproduce RF" en verde; preguntas 6–7 resueltas | No empezada |
@@ -19,7 +19,7 @@ Los hitos y su criterio de "terminado" están en `01-cart-tree.md` §9. Esta tab
 
 | Hito | Estado | Tareas |
 |---|---|---|
-| M0 — repo, CI, esqueleto | Hecho localmente. Falta: primer commit, remoto en GitHub y CI en verde allá | — |
+| M0 — repo, CI, esqueleto | Hecho (CI en verde en GitHub) | — |
 | M1 — `_criterion`, `_splitter`, `_selector`, con pesos | Pendiente | 1. tests de `_criterion` (§7.1) → implementar; 2. test de fuerza bruta del splitter y casos borde (float32, repetidos, `min_samples_leaf`, pesos) → implementar `CandidateSplits` y el splitter; 3. tests de `BestSplitSelector` → implementar |
 | M2 — builder, `fit`, `predict`, `predict_proba`, `apply` | Pendiente | 1. tests del builder (§7.1), incluidas las propiedades con hypothesis; 2. `_tree.py` (arrays paralelos, §3) y el builder (§5.4); 3. validación de entrada y de `sample_weight` (§2); 4. tests de API (§7.3) → clasificador |
 | M3 — corrección contra sklearn | Pendiente | 1. capa 1; 2. helper de muestras por nodo + capa 2; 3. capa 3 |

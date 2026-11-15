@@ -22,15 +22,15 @@
 - **Versiones:** Python 3.13 (soporte desde 3.12), sklearn `>=1.8,<1.9` → `0005`.
 - **Specs** en `.claude/specs/NN-nombre.md`.
 - **Spec de la fase 1 revisada y lista para implementar.**
-- **Esqueleto del repo (M0):** `pyproject.toml`, `uv.lock`, LICENSE MIT, `CITATION.cff`, README, `.gitignore`, `.gitattributes`, CI (lint + tests en 3.12/3.13), test de humo. Lint y tests en verde localmente.
+- **Esqueleto del repo (M0):** `pyproject.toml`, `uv.lock`, LICENSE MIT, `CITATION.cff`, README, `.gitignore`, `.gitattributes`, CI (lint + tests en 3.12/3.13), test de humo. **M0 cerrado:** CI en verde en GitHub (repo privado https://github.com/bravoivanagustin/gain-weighted-trees).
+- **Menor, sin urgencia:** el CI avisa que `actions/checkout@v4` y `astral-sh/setup-uv@v6` usan Node 20, que está deprecado. Subirlas a versiones con Node 24 cuando convenga.
 
 ## Pendiente, en orden
 
 1. **Confirmar la forma de trabajo** de `00-roadmap.md` (sección *propuesta*: tareas chicas, tests primero, un PR por hito). Después quitar la nota de borrador.
-2. **CI en verde en GitHub** (repo privado: https://github.com/bravoivanagustin/gain-weighted-trees). Con eso se cierra el M0. Badge y URLs ya están puestos.
-3. **Implementar la fase 1:** M1 → M5, según `01-cart-tree.md` §9 y las tareas de `00-roadmap.md`.
-4. **Antes de la fase 2:** resolver las preguntas 1–5 de `docs/open-questions.md` y escribir `02-gain-weighted-selector.md`.
-5. **Después del M5:** estimar el presupuesto de cómputo de la fase 4 (pregunta 7).
+2. **Implementar la fase 1:** M1 → M5, según `01-cart-tree.md` §9 y las tareas de `00-roadmap.md`.
+3. **Antes de la fase 2:** resolver las preguntas 1–5 de `docs/open-questions.md` y escribir `02-gain-weighted-selector.md`.
+4. **Después del M5:** estimar el presupuesto de cómputo de la fase 4 (pregunta 7).
 
 ## Cómo retomar en otra computadora
 
