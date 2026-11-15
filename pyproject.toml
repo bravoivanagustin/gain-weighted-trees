@@ -1,0 +1,44 @@
+[project]
+name = "gain-weighted-trees"
+version = "0.1.0"
+description = "Decision trees and random forests that sample each split with probability weighted by its impurity gain."
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Iván Agustín Bravo", email = "bravoivanagustin@gmail.com" }]
+requires-python = ">=3.12"
+dependencies = [
+    "numpy>=2",
+    # Narrow on purpose: the tree reproduces internal scikit-learn semantics (split thresholds,
+    # float32 comparisons) that change between releases. Re-check them before widening.
+    "scikit-learn>=1.8,<1.9",
+]
+
+[project.urls]
+Repository = "https://github.com/bravoivanagustin/gain-weighted-trees"
+
+[dependency-groups]
+dev = [
+    "hypothesis>=6",
+    "pytest>=7",
+    "pytest-cov>=4",
+    "ruff>=0.6",
+]
+
+[build-system]
+requires = ["uv_build>=0.10,<0.11"]
+build-backend = "uv_build"
+
+[tool.uv.build-backend]
+module-name = "gwtree"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+extend-exclude = ["notebooks", ".claude"]  # code blocks in the specs are illustrative
+
+[tool.ruff.lint]
+select = ["E", "W", "F", "I", "UP", "B", "SIM"]
+ignore = ["E501"]  # the formatter handles code; long comments and strings are left alone

@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+type: software
+title: "gain-weighted-trees"
+abstract: >-
+  Decision trees and random forests that sample each split with probability
+  weighted by its impurity gain, to study whether this lowers the variance of
+  random forests by reducing the correlation between trees.
+authors:
+  - given-names: "Iván Agustín"
+    family-names: "Bravo"
+repository-code: "https://github.com/bravoivanagustin/gain-weighted-trees"
+license: MIT
+version: 0.1.0
+keywords:
+  - random forest
+  - decision trees
+  - ensemble methods
+  - variance reduction
+  - machine learning
